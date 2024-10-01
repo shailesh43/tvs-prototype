@@ -1,10 +1,25 @@
+// !important imports
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+//pages
+import Homepage from './pages/Homepage'
+import Gallerypage from './pages/Gallerypage'
+import Demopage from './pages/Demopage'
+import NotFoundPage from './pages/NotFoundPage'
+
+
+const router = createBrowserRouter([
+  {path: '/', element: <Homepage />, errorElement: <NotFoundPage />}, 
+  {path: '/gallery', element: <Gallerypage />}, 
+  {path: '/demo', element: <Demopage />}
+])
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
