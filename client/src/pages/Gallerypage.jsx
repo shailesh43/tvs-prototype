@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Gallery.css';
+import './Gallery.css';
 
 const WildlifeGallery = () => {
   const images = [

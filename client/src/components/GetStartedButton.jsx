@@ -11,7 +11,7 @@ function GetStartedButton() {
   };
   return (
     <div >
-      <button onClick={handleClick} className=""
+      <button onClick={handleClick} 
         style={{ backgroundColor: "", color: "#ffffff", fontSize: "22px" }}
         className="flex font-medium max-w-[200px] ml-12  p-2.5 justify-between align-middle bg-blue-600 hover:bg-blue-500 items-center border rounded-xl "
       >
