@@ -9,11 +9,12 @@ import Homepage from './pages/Homepage'
 import Gallerypage from './pages/Gallerypage'
 import Demopage from './pages/Demopage'
 import NotFoundPage from './pages/NotFoundPage'
+import AltGalleryPage from './pages/AltGalleryPage'
 
 
 const router = createBrowserRouter([
   {path: '/', element: <Homepage />, errorElement: <NotFoundPage />}, 
-  {path: '/gallery', element: <Gallerypage />}, 
+  {path: '/gallery', element: <AltGalleryPage />}, 
   {path: '/demo', element: <Demopage />}
 ])
 
