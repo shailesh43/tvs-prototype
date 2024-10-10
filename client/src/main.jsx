@@ -6,15 +6,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //pages
 import Homepage from './pages/Homepage'
-import Gallerypage from './pages/Gallerypage'
 import Demopage from './pages/Demopage'
 import NotFoundPage from './pages/NotFoundPage'
-import AltGalleryPage from './pages/AltGalleryPage'
+import GalleryPage from './pages/GalleryPage'
 
 
 const router = createBrowserRouter([
   {path: '/', element: <Homepage />, errorElement: <NotFoundPage />}, 
-  {path: '/gallery', element: <AltGalleryPage />}, 
+  {path: '/gallery', element: <GalleryPage />}, 
   {path: '/demo', element: <Demopage />}
 ])
 

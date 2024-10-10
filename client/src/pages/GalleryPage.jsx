@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./Gallery.css";
-function AltGalleryPage() {
-  const [query, setQuery] = useState("Capybara");
+import "./Gallerypage.css";
+import viewIcon from "../assets/view-icon.svg";
+import Skeleton from "react-loading-skeleton";
+
+function GalleryPage() {
+  const [query, setQuery] = useState("frogs");
   const [loading, setLoading] = useState();
   const [data, setData] = useState([]);
 
@@ -38,9 +41,12 @@ function AltGalleryPage() {
       <div>
         <div className="header">
           <div className="block text-4xl font-light">
-          Explore a World of 
-            <span className="gradient font-extrabold">  Wildlife and Flora</span> in
-            through Stunning Images
+            Explore a World of
+            <span className="gradient font-extrabold">
+              {" "}
+              Wildlife and Flora
+            </span>{" "}
+            in through Stunning Images
           </div>
           <input
             className="inputSearch min-w-60 text-sm min-h-10 p-2 m-2 mt-7 rounded-md text-gray-700"
@@ -51,13 +57,23 @@ function AltGalleryPage() {
           ></input>
         </div>
 
-        {loading && <h1 className="text-slate-700 p-4">Fetching...</h1>}
+        {loading && <Skeleton />}
 
-        <div className="container">
+        <div className="gallery mt-10">
           {data?.map((item, index) => {
             return (
-              <div className="box">
+              <div className="gallery-item ">
                 <img src={item.src.medium} alt="" />
+                <span>
+                  <a
+                    href={item.src.original}
+                    download
+                    className="download-button"
+                    target="_blank"
+                  >
+                    <img src={viewIcon} className="view-icon" />
+                  </a>
+                </span>
               </div>
             );
           })}
@@ -67,4 +83,4 @@ function AltGalleryPage() {
   );
 }
 
-export default AltGalleryPage;
+export default GalleryPage;
